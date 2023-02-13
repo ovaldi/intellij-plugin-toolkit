@@ -1,7 +1,7 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.ovaldi.toolkit</id>
-    <name>IntelliJ Platform Plugin toolkit</name>
+    <name>Toolkit</name>
     <vendor>ovaldi</vendor>
 
     <depends>com.intellij.modules.platform</depends>
@@ -9,6 +9,10 @@
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.github.ovaldi.toolkit.services.MyApplicationService"/>
         <projectService serviceImplementation="com.github.ovaldi.toolkit.services.MyProjectService"/>
+
+        <toolWindow id="Tencent Cloud Toolkit"
+                    anchor="right"
+                    factoryClass="com.github.ovaldi.toolkit.ui.BrowserWindowFactory"/>
     </extensions>
 
     <applicationListeners>
