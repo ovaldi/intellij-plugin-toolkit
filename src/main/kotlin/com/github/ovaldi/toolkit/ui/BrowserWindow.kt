@@ -8,15 +8,13 @@ import com.intellij.ui.jcef.JBCefBrowser
 import javax.swing.BorderFactory
 import javax.swing.JPanel
 
+
 class BrowserWindow(project: Project) : Disposable {
     private var project: Project? = null
     private var panel: JPanel? = null
 
     init {
-        val x = SimpleToolWindowPanel(true, false)
-        x.border = BorderFactory.createEmptyBorder(0, 3, 0, 0)
         this.project = project
-        this.panel = x
         init()
     }
 
@@ -25,8 +23,11 @@ class BrowserWindow(project: Project) : Disposable {
             // Fallback to an alternative browser-less solution
             return
         }
-        val browser = JBCefBrowser("https://www.baidu.com")
-        panel!!.add(browser.component)
+        val browser = JBCefBrowser("https://cloudstudio.net")
+        val x = SimpleToolWindowPanel(true, false)
+        x.border = BorderFactory.createEmptyBorder(0, 3, 0, 0)
+        x.add(browser.component)
+        this.panel = x
     }
 
     fun getPanel(): JPanel? {
