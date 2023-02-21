@@ -6,19 +6,16 @@ import com.intellij.openapi.wm.ToolWindow
 import com.intellij.openapi.wm.ToolWindowFactory
 import com.intellij.ui.content.ContentFactory
 
-
-class BrowserWindowFactory : ToolWindowFactory, DumbAware {
+class DashboardWindowFactory : ToolWindowFactory, DumbAware {
     override fun createToolWindowContent(project: Project, toolWindow: ToolWindow) {
-        val bw = BrowserWindow(project)
+        val dw = DashboardWindow(project)
         val cm = toolWindow.contentManager
-        val content = ContentFactory.SERVICE.getInstance().createContent(bw.getPanel(), "", false)
+        val content = ContentFactory.SERVICE.getInstance().createContent(dw.getPanel(), "", false)
         cm.addContent(content)
         cm.setSelectedContent(content)
 
 //        if (toolWindow is ToolWindowEx) {
 //            toolWindow.stretchWidth(1000)
 //        }
-
-        WebView.open(project, "https://www.baidu.com")
     }
 }

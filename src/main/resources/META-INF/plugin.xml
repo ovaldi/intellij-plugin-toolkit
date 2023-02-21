@@ -12,7 +12,7 @@
 
         <toolWindow id="Tencent Cloud Toolkit"
                     anchor="right"
-                    factoryClass="com.github.ovaldi.toolkit.ui.BrowserWindowFactory"/>
+                    factoryClass="com.github.ovaldi.toolkit.ui.DashboardWindowFactory"/>
 
         <fileEditorProvider implementation="com.github.ovaldi.toolkit.ui.WebViewProvider" />
     </extensions>
